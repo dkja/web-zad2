@@ -130,6 +130,22 @@
                 })
         }
 
+        function errorHandler(msg, url, line){
+            var info = 'Wystąpił błąd\n';
+            info += "Komunikat błędu: " + msg + "\n"
+            info += "URL: " + url + "\n";
+            info += "w linii: " + line + "\n\n";
+
+            alert(info);
+        }
+
+        window.onerror = errorHandler;
+
+        nieIstniejacaFunkcja();
+
+        
+
+
     </script>
 </head>
 
