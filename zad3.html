@@ -107,7 +107,14 @@
         document.writeln("Producent: " + plane.producent)
         document.writeln("<BR>Model: " + plane.model)
 
-        
+            Samolot.prototype.wypisz = function(){
+                document.write("<br/><br/>Producent: " + this.producent + "<br/>")
+                document.write("Model: " + this.model + "<br/>")
+                document.write("Oznaczenie: " + this.oznaczenie + "<br/>")
+                document.write("Zasieg: " + this.zasieg + "<br/>")
+                document.write("Liczba silnikow: " + this.liczba_silnikow+ "<br/>")
+            }
+
     </script>
 </head>
 
