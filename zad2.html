@@ -51,30 +51,42 @@
 
             return wynik;
         }
-      
-      function odejmowanie(a, b){
-          
-      }
 
-        function kalkulator(wynik) {
-            var liczba1 = parseFloat(document.getElementById("liczba1").value);
+        function odejmowanie(a, b) {
+            if (Number.isNaN(a) || Number.isNaN(b)) {
+                return 'Invalid data';
+
+                return a - b;
+
+            }
+
+            function mnożenie(a, b) {
+            if (Number.isNaN(a) || Number.isNaN(b)) {
+                return 'Invalid data';
+
+                return a * b;
+
+            }
+
+            function kalkulator(wynik) {
+                var liczba1 = parseFloat(document.getElementById("liczba1").value);
         
         ...
 
-            switch (dzialanie) {
-                case '+':
-                    wynik = dodawanie(liczba1, liczba2);
-                    break;
-                case '-':
-                    wynik = odejmowanie(liczba1, liczba2);
-                    break;
-                case 'x':
-                    wynik = mnożenie(liczba1, liczba2);
-                    break;
-            }
+                switch (dzialanie) {
+                    case '+':
+                        wynik = dodawanie(liczba1, liczba2);
+                        break;
+                    case '-':
+                        wynik = odejmowanie(liczba1, liczba2);
+                        break;
+                    case 'x':
+                        wynik = mnożenie(liczba1, liczba2);
+                        break;
+                }
 
-            document.getElementById("wynik").value = wynik;
-        }
+                document.getElementById("wynik").value = wynik;
+            }
     </script>
 </head>
 
