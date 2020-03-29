@@ -15,10 +15,10 @@
                 this.rok_produkcji = rok_produkcji
             }
             przyspiesz(ile) {
-                if((predkosc + ile) > predkosc_max)
-                    predkosc = predkosc_max
+                if((this.predkosc + ile) > this.predkosc_max)
+                    this.predkosc = this.predkosc_max
                 else
-                    predkosc += ile
+                    this.predkosc += ile
             }
 
             zwolnij(ile) {
@@ -84,7 +84,7 @@
         }
       
         var lokomotywa = new Lokomotywa
-        ("CIUFCIA",100,170,"Staro-radziecka",1920)
+        ("CIUFCIA",0,170,"Staro-radziecka",1920)
 
 
       function zmien(){
@@ -93,6 +93,12 @@
             lokomotywa.zatrzymaj = function(){
                 lokomotywa.predkosc = 0;
             }
+      }
+
+      function rusz(){
+          alert("witam");
+          lokomotywa.przyspiesz(10);
+          alert(lokomotywa.predkosc);
       }
 
       
