@@ -39,7 +39,7 @@
                 this.cena = cena;
             }
             wejdz(osoba) {
-                document.write(osoba.imie +" "+osoba.nazwisko+" wszedł do samochodu ... ");
+                document.write(osoba.imie +" "+osoba.nazwisko+" wszedł do samochodu ... <br/>");
             }
             wyjdz() {
                 document.write("wyszedł z samochodu ... ");
@@ -120,6 +120,10 @@
 
             var maluch = new Samochod("Fiat","126p",1980,9000);
             maluch.wejdz(osoba);
+
+            var silnik = new Silnik("Krokowy",2600);
+            silnik.zwiekszObroty();
+            document.writeln("Aktualne obroty: "+ silnik.obroty);
 
     </script>
 </head>
