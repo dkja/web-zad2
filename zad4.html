@@ -116,6 +116,20 @@
             document.getElementById("liczba1").style.backgroundColor = "white";
         }
 
+        
+        
+        var klikniecia = 0;
+        document.addEventListener("DOMContentLoaded", loaded);
+
+
+        function loaded() {
+            document.getElementById("klikacz").addEventListener("click",
+                function () {
+                    klikniecia++;
+                    document.getElementById("klikacz").textContent = "Kliknales na element " + klikniecia + " razy";
+                })
+        }
+
     </script>
 </head>
 
@@ -130,6 +144,7 @@
         <input type="text" id="wynik" placeholder="wynik" disabled="disabled" /><br>
         <button type="button" onclick="kalkulator(10)">Oblicz</button>
     </form>
+    <button type="button" id="klikacz">Kliknij mnie</button>
 </body>
 
 </html>
