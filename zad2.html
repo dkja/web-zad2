@@ -55,18 +55,16 @@
         function odejmowanie(a, b) {
             if (Number.isNaN(a) || Number.isNaN(b)) {
                 return 'Invalid data';
-
-                return a - b;
-
             }
+            return a - b;
+        }
 
-            function mnożenie(a, b) {
+        function mnożenie(a, b) {
             if (Number.isNaN(a) || Number.isNaN(b)) {
                 return 'Invalid data';
-
-                return a * b;
-
             }
+            return a * b;
+        }
 
         function kalkulator(wynik) {
             var liczba1 = parseFloat(document.getElementById("liczba1").value);
@@ -85,7 +83,7 @@
             }
 
             document.getElementById("wynik").value = wynik;
-            }
+        }
     </script>
 </head>
 
