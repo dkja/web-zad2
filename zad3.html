@@ -15,8 +15,19 @@
                 this.rok_produkcji = rok_produkcji
             }
             przyspiesz(ile) {
-                
+                if((predkosc + ile) > predkosc_max)
+                    predkosc = predkosc_max
+                else
+                    predkosc += ile
             }
+
+            zwolnij(ile) {
+                if((predkosc - ile) < 0)
+                    predkosc = 0
+                else
+                    predkosc -= ile
+            }    
+            
         }
 
 
@@ -72,7 +83,6 @@
             this.liczba_silnikow = 2;
         }
       
-
         var lokomotywa = new Lokomotywa
         ("CIUFCIA",100,170,"Staro-radziecka",1920)
 
@@ -93,7 +103,6 @@
         document.writeln("<BR>Model: " + plane.model)
 
         
-
     </script>
 </head>
 
