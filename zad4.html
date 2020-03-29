@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript - zmienne i funkcje</title>
+    <script type="text/javascript">
+        var przykladowaZmienna = 20;
+
+        function nowaFunkcja() {
+            przykladowaZmienna = 30;
+            document.write("Pierwsze wywołanie zmiennej typu var o nazwie 'przykladowaZmienna': " + przykladowaZmienna + "<br>");
+
+            var przykladowaZmienna = 40; // deklaracja wewnątrz funkcji!!!
+            document.write("Drugie wywołanie zmiennej typu var o nazwie 'przykladowaZmienna': " + przykladowaZmienna + "<br>");
+        }
+        nowaFunkcja();
+        document.write("Trzecie wywołanie zmiennej typu var o nazwie 'przykladowaZmienna': " + przykladowaZmienna + "<br>");
+
+        function zmiennaTypuVar() {
+            var zmienna = 5;
+
+            for (var zmienna = 0; zmienna < 10; zmienna++) { }
+
+            document.write("To jest wynik zmiennej typu var: " + zmienna + "<br>");
+        }
+        zmiennaTypuVar();
+
+        function zmiennaTypuLet() {
+            let zmienna = 5;
+
+            for (let zmienna = 0; zmienna < 10; zmienna++) { }
+
+            document.write("To jest wynik zmiennej typu let: " + zmienna + "<br>");
+        }
+        zmiennaTypuLet();
+
+        const wynik = 100;
+
+
+        function dodawanie(a, b) {
+            var wynik = false;
+
+            if (Number.isNaN(a) || Number.isNaN(b)) {
+                let tekst = "Brak danych";
+                wynik = tekst;
+            }
+            else {
+                wynik = a + b;
+            }
+
+            return wynik;
+        }
+
+        function odejmowanie(a, b) {
+            if (Number.isNaN(a) || Number.isNaN(b)) {
+                return 'Invalid data';
+            }
+            return a - b;
+        }
+
+        function mnożenie(a, b) {
+            if (Number.isNaN(a) || Number.isNaN(b)) {
+                return 'Invalid data';
+            }
+            return a * b;
+        }
+
+        function dzielenie(a, b){
+            if (Number.isNaN(a) || Number.isNaN(b)) {
+                return 'Invalid data';
+            }
+            if(b == 0){
+                var divisionZeroMessage = 'Nie mozna dzielic przez 0'; 
+                alert(divisionZeroMessage);
+                return divisionZeroMessage;
+            }
+            return a/b;
+        }
+
+        function kalkulator(wynik) {
+            var liczba1 = parseFloat(document.getElementById("liczba1").value);
+            var liczba2 = parseFloat(document.getElementById("liczba2").value);
+            var dzialania = document.getElementsByName("dzialanie");
+            var dzialanie = null
+            for(var i=0; dzialania.length;i++){
+                if(dzialania[i].checked){
+                    dzialanie = dzialania[i].value
+                    break;
+                }
+            }
+
+            switch (dzialanie) {
+                case '+':
+                    wynik = dodawanie(liczba1, liczba2);
+                    break;
+                case '-':
+                    wynik = odejmowanie(liczba1, liczba2);
+                    break;
+                case 'x':
+                    wynik = mnożenie(liczba1, liczba2);
+                    break;
+                case '/':
+                    wynik = dzielenie(liczba1, liczba2);
+                    break;
+            }
+
+            document.getElementById("wynik").value = wynik;
+        }
+    </script>
+</head>
+
+<body>
+    <form id="calk" action="#" name="theForm">
+        <input type="text" id="liczba1" placeholder="liczba1" /><br>
+        <input type="text" id="liczba2" placeholder="liczba2" /><br>
+        <input type="radio" name="dzialanie" value="+" checked /> +
+        <input type="radio" name="dzialanie" value="-" /> -
+        <input type="radio" name="dzialanie" value="x" /> x
+        <input type="radio" name="dzialanie" value="/" /> /<br>
+        <input type="text" id="wynik" placeholder="wynik" disabled="disabled" /><br>
+        <button type="button" onclick="kalkulator(10)">Oblicz</button>
+    </form>
+</body>
+
+</html>
