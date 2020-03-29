@@ -107,12 +107,21 @@
 
             document.getElementById("wynik").value = wynik;
         }
+
+        function mouseOverLiczba1(){
+            document.getElementById("liczba1").style.backgroundColor = "orange";
+        }
+
+        function mouseOutLiczba1(){
+            document.getElementById("liczba1").style.backgroundColor = "white";
+        }
+
     </script>
 </head>
 
 <body>
     <form id="calk" action="#" name="theForm">
-        <input type="text" id="liczba1" placeholder="liczba1" /><br>
+        <input type="text" id="liczba1" placeholder="liczba1" onmouseover="mouseOverLiczba1()" onmouseout="mouseOutLiczba1()"/><br>
         <input type="text" id="liczba2" placeholder="liczba2" /><br>
         <input type="radio" name="dzialanie" value="+" checked /> +
         <input type="radio" name="dzialanie" value="-" /> -
