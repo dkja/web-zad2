@@ -69,7 +69,15 @@
         function kalkulator(wynik) {
             var liczba1 = parseFloat(document.getElementById("liczba1").value);
             var liczba2 = parseFloat(document.getElementById("liczba2").value);
-            var dzialanie = document.getElementsByName("dzialanie").value
+            var dzialania = document.getElementsByName("dzialanie");
+            var dzialanie = null
+            for(var i=0; dzialania.length;i++){
+                if(dzialania[i].checked){
+                    dzialanie = dzialania[i].value
+                    break;
+                }
+            }
+
             switch (dzialanie) {
                 case '+':
                     wynik = dodawanie(liczba1, liczba2);
